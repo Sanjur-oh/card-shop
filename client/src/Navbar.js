@@ -3,7 +3,7 @@
     function Navbar() {
        return( <nav className="nav">
             <a href="/" className="site-title"> 
-            Card Site 
+            Shoe Site 
             </a>
             <ul>
                 <li>
