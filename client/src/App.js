@@ -2,7 +2,10 @@
 import Navbar from "./Navbar"
 import Home from "./pages/Home"
 import ErrorPage from "./pages/ErrorPage"
-import ProductPage from "./pages/ProductPage"
+import Profile from "./pages/Profile"
+// import Login from "./components/Login"
+// import ChangeColor from "./components/ChangeColor"
+import ProductsPage from "./pages/ProductsPage"
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -21,7 +24,9 @@ function App() {
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          {/* <Route path="/login" element={<Login />} /> */}
+          <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<ErrorPage />} />   
         </Routes>
       </div>

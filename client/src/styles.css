@@ -13,7 +13,7 @@ body {
 
 
 .nav {
-    background-color: rgb(226, 17, 17);
+    background-color: rgb(8, 8, 8);
     color: white;
     display: flex;
     justify-content: space-between;
@@ -56,17 +56,27 @@ body {
 } */
 
 .nav li:hover {
-    background-color: rgb(23, 88, 52);
+    /* background-color: rgb(222, 231, 89); */
     /* background-color: #777; */
 }
 
 
 .nav img {
-    height: 110px;
+    height: 80px;
+    width: 80px;
     display: flex;
     align-items: center;
     border-radius: 200px;
-    background: #73AD21;
-    padding: 0px;
+    background: #fffb00;
+    padding: 2px;
     /* animation: spin 13s infinite linear; */
 }
+
+/* @keyframes spin {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+} */

@@ -1,7 +1,7 @@
 import React from "react";
 // import { BrowserRouter as Router } from "react-router-dom";
 
-function Home() {
+function ProductsPage() {
     return (
         <div className="App">
             <header className="App-header">
@@ -13,4 +13,4 @@ function Home() {
     )
 }
 
-export default Home;
+export default ProductsPage;

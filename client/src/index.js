@@ -1,16 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import './styles.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {BrowserRouter as Router} from 'react-router-dom';
+import { configureStore } from '@reduxjs/toolkit';
+import {BrowserRouter} from 'react-router-dom';
+import  {Provider}  from "react-redux";
+import userReducer from './features/user'
+import themeReducer from './features/theme'
+
+
+const store = configureStore({
+  reducer: {
+    user: userReducer,
+    theme: themeReducer
+  }, 
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Router>
-    <App />
-  </Router>
+
+
+  
+    <BrowserRouter> 
+        <React.StrictMode>
+          <Provider store={store}>
+            <App />
+          </Provider>
+        </React.StrictMode>  
+    </BrowserRouter> 
+  
+
+
+
 );
 
 // If you want to start measuring performance in your app, pass a function

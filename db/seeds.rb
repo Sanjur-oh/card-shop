@@ -7,12 +7,12 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 
-10.times do
-  User.create([{
-    email: Faker::Internet.email,
-    password_digest: Faker::Internet.password(min_length: 10, max_length: 20),
-    username: Faker::Internet.username(specifier: 5..10)
+# 10.times do
+#   User.create([{
+#     email: Faker::Internet.email,
+#     password_digest: Faker::Internet.password(min_length: 10, max_length: 20),
+#     username: Faker::Internet.username(specifier: 5..10)
 
 
-  }])
-end
+#   }])
+# end
