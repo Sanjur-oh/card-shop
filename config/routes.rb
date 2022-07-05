@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :cart_items
+  resources :carts
+  resources :user_shoes
+  resources :shoes
   resources :users
   # Defines the root path route ("/")
   # root "articles#index"

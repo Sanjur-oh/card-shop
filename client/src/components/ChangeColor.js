@@ -1,3 +1,5 @@
+// not implemented yet it was just idea from the redux demo
+
 import React, {useState} from 'react';
 import {useDispatch} from "react-redux"
 import {changeColor} from "../features/theme"
