@@ -8,16 +8,25 @@
 require "faker"
 
 User.destroy_all
-
-# 10.times do
-#   User.create([{
-#     email: Faker::Internet.email,
-#     password_digest: Faker::Internet.password(min_length: 10, max_length: 20),
-#     username: Faker::Internet.username(specifier: 5..10)
+Shoe.destroy_all
 
 
-#   }])
-# end
+User.create(name: "Michael Franco",
+            username: "Mikey", 
+            email: "michael305618@gmail.com",
+            password: "password",
+            admin: true)
+
+5.times do
+  User.create([{
+    name: Faker::Name.unique.name,
+    username: Faker::Internet.username(specifier: 5..10),
+    email: Faker::Internet.email,
+    password_digest: Faker::Internet.password(min_length: 10, max_length: 20),
+    admin: false
+
+  }])
+end
 
 Shoe.create!([{
   shoeName:"Nike Dunk Low Retro White Black",
@@ -90,14 +99,14 @@ Shoe.create!([{
     goat:"https://www.goat.com/sneakers/kasina-x-air-max-1-sp-better-together-do7414-kas"},
 
     {
-        shoeName:"Nike Air Max 1",
-        brand:"Nike",
-        colorway:"Grey/Blue/Off White",
-        retailPrice:160,
-        image_url:"https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/073/719/985/original/946192_01.jpg.jpeg?action=crop&width=950",
-        stockX:"https://stockx.com/nike-air-max-1-kasina-won-ang-grey",
-        ebay:"https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=kasina+x+air+max+1+sp+%27won-ang+-+grey%27&_sacat=0&LH_TitleDesc=0&_odkw=Kasina+x+Air+Max+1+SP+%27Won-Ang+-+Grey%27&_osacat=0",
-        goat:"https://www.goat.com/sneakers/kasina-x-air-max-1-sp-better-together-grey-dq8475-001"},
+      shoeName:"Nike Air Max 1",
+      brand:"Nike",
+      colorway:"Grey/Blue/Off White",
+      retailPrice:160,
+      image_url:"https://image.goat.com/transform/v1/attachments/product_template_additional_pictures/images/073/719/985/original/946192_01.jpg.jpeg?action=crop&width=950",
+      stockX:"https://stockx.com/nike-air-max-1-kasina-won-ang-grey",
+      ebay:"https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=kasina+x+air+max+1+sp+%27won-ang+-+grey%27&_sacat=0&LH_TitleDesc=0&_odkw=Kasina+x+Air+Max+1+SP+%27Won-Ang+-+Grey%27&_osacat=0",
+      goat:"https://www.goat.com/sneakers/kasina-x-air-max-1-sp-better-together-grey-dq8475-001"},
 
     {
     shoeName:"Jordan 6 Retro",
@@ -119,3 +128,13 @@ Shoe.create!([{
     ebay:"https://www.ebay.com/sch/i.html?_from=R40&_trksid=m570.l1313&_nkw=Air+Jordan+4+Retro+%27Military+Black%27&_sacat=0",
     goat:"https://www.goat.com/sneakers/air-jordan-4-retro-military-black-dh6927-111"
     }])
+
+
+    User.all.each do |user|
+      rand(1..3).times do
+        # get a random shoe
+        shoe = Shoe.find(Shoe.pluck(:id).sample)
+    
+        UserShoe.create!(user_id: user.id, shoe_id: shoe.id)
+      end
+    end
