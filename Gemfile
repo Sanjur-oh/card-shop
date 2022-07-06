@@ -49,3 +49,5 @@ end
 
 
 gem "active_model_serializers", "~> 0.10.13"
+#can't figure out issue with the home/index route
+# gem 'devise', '~> 4.8', '>= 4.8.1'
