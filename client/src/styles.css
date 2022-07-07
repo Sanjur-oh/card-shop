@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    /* background-color: black; */
 }
 
 body {
@@ -11,17 +12,17 @@ body {
     text-align: center;
 }
 
- 
 
 
 .nav {
-    background-color: rgb(8, 8, 8);
+    /* background-color: rgb(8, 8, 8); */
+    background-color: rgb(7, 7, 95);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    padding: 0 1rem;
+    padding: 0.1rem;
 }
 
 /*  makes store shift up. fix later if you want title larger */ 
@@ -82,3 +83,18 @@ body {
       transform: rotate(0deg);
     }
 } */
+
+
+ .image {
+    width: 50%;
+    /* height: 50%; */
+    object-fit: cover;
+    padding: 50px;
+    margin: 10px;
+    border-radius: 15px;
+    background: yellow;
+    padding: 3px;
+    width: 300px;
+    /* height: 100px; */
+ }
+  

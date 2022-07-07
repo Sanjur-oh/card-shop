@@ -3,7 +3,7 @@
 
 import React from "react";
 import {useDispatch} from "react-redux"
-import {login, logout} from '../features/user'
+// import {login, logout} from '../features/userSlice'
 
 
 function Login() {
@@ -12,14 +12,15 @@ function Login() {
   return (
     <div className="App">
       <header className="App-header">
-        <button 
+        <button className="nav-button"
           onClick={() => {
-            dispatch(login({ username: "mikey", email: "", address: "" }));
+            // dispatch(login({ username: "mikey", email: "", address: "" }));
+            // dispatch(login({username: {user.username}, email: {user.email}, name: {user.name}}));
           }}>Login
           </button>
 
-          <button  onClick={() => {
-            dispatch(logout());
+          <button className="nav-button" onClick={() => {
+            // dispatch(logout());
           }}>Logout</button>
       </header>
     </div>

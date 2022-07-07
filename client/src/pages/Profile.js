@@ -1,29 +1,51 @@
+    import React, {useEffect} from 'react';
+    import {useDispatch, useSelector} from 'react-redux'
+    import {fetchUsers} from '../features/userSlice'
 
-import React from "react";
-import { useSelector } from "react-redux";
+    function Profile() {
+        const user = useSelector((state) => state.user)
+        const dispatch = useDispatch()
+        useEffect(() => {
+            dispatch(fetchUsers())
+        }, [])
 
-function Profile() {
-    const user = useSelector((state) => state.user.value)
+        return (
+        <div>
+            <h1>Profile Page</h1>
+            {user.loading && <div>Loading...</div>}
+            {!user.loading && user.error ? <div>Error: {user.error}</div> : null}
+                <ul>
+                    {user.users.map((user) => (
+                        <li key={user.id}>{user.name}</li>
+                    ))}
+                </ul>
+        </div>
+    )}
+    
+    export default Profile
 
 
-    return (
-        <div className="App">
-            <header className="App-header">
-                <h1>Profile Page</h1>
-                <p>Username: {user.username}</p>
-                <p>Email: {user.email}</p>
-                <p>Name: {user.name}</p>
-                {/* <p>Collection: {user.user_shoe}</p> */}
+//     const user = useSelector((state) => state.user.value)
+
+
+//     return (
+//         <div className="App">
+//             <header className="App-header">
+//                 <h1>Profile Page</h1>
+//                 <p>Username: {user.username}</p>
+//                 <p>Email: {user.email}</p>
+//                 <p>Name: {user.name}</p>
+//                 {/* <p>Collection: {user.user_shoe}</p> */}
 
         
 
-            </header>
-        </div>
+//             </header>
+//         </div>
       
-    );
-}
+//     );
+// }
 
-export default Profile;
+// export default Profile;
 
 
 
@@ -70,7 +92,5 @@ export default Profile;
 
     // if (status === "pending") return <div>"hol up"</div>;
     // if (status === "rejected") return <h1>Error: {error.error}</h1>;
-
-
 
 
