@@ -1,11 +1,11 @@
 import React from "react";
 // import { BrowserRouter as Router } from "react-router-dom";
 
-function ProductsPage() {
+function Cart() {
     return (
         <div className="App">
             <header className="App-header">
-                <h1>Products</h1>
+                <h1>Cart</h1>
             </header>
         </div>
 
@@ -13,4 +13,4 @@ function ProductsPage() {
     )
 }
 
-export default ProductsPage;
+export default Cart;

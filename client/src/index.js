@@ -7,13 +7,15 @@ import { configureStore } from '@reduxjs/toolkit';
 import {BrowserRouter} from 'react-router-dom';
 import  {Provider}  from "react-redux";
 import userReducer from './features/user'
-import themeReducer from './features/theme'
+// import themeReducer from './features/theme'
+import shoeReducer from './features/shoe'
 
 
 const store = configureStore({
   reducer: {
     user: userReducer,
-    theme: themeReducer
+    shoe: shoeReducer,
+    // theme: themeReducer
   }, 
 })
 

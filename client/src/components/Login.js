@@ -1,9 +1,10 @@
 // made login page on the profile page
+// this login was made in redux tutorial
 
 import React from "react";
 import {useDispatch} from "react-redux"
 import {login, logout} from '../features/user'
-// import { BrowserRouter as Router } from "react-router-dom";
+
 
 function Login() {
   const dispatch = useDispatch();
@@ -11,13 +12,13 @@ function Login() {
   return (
     <div className="App">
       <header className="App-header">
-        <button
+        <button 
           onClick={() => {
             dispatch(login({ username: "mikey", email: "", address: "" }));
           }}>Login
           </button>
 
-          <button onClick={() => {
+          <button  onClick={() => {
             dispatch(logout());
           }}>Logout</button>
       </header>

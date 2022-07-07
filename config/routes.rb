@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   #, to: 'home#index'
   # root 'home#index'
 
-  # route to test your configuration
-  get '/hello', to: 'application#hello_world'
+  # route to test your configuration. but not sure if needed
+  # get '/hello', to: 'application#hello_world'
 
   # do i need this? is this complicating the home/index route
   get '*path', to: 'fallback#index', constraints: ->(req) { !req.xhr? && req.format.html? }
