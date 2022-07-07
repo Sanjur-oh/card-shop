@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    /* background-color: black; */
+    /* background-color: rgb(7, 7, 95); */
 }
 
 body {
@@ -17,7 +17,8 @@ body {
 .nav {
     /* background-color: rgb(8, 8, 8); */
     background-color: rgb(7, 7, 95);
-    color: white;
+    color: yellow;
+    /* color: white; */
     display: flex;
     justify-content: space-between;
     align-items: center;

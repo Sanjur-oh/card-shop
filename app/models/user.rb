@@ -11,7 +11,7 @@ class User < ApplicationRecord
 
 
     validates :email, presence: true
-    # should only allow specific email addresses
+    # should only allow specific email addresses is it validates??
     validate :is_email_valid?
 
 
