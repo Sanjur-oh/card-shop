@@ -1,0 +1,193 @@
+.navbar {
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 2;
+    /* background-color: rgb(8, 8, 8); */
+    background-color: rgb(7, 7, 95);
+    color: yellow;
+    /* color: white; */
+    gap: 2rem; 
+    /* position: absolute;  */
+}
+
+.nav-menu {
+    display: flex;
+}
+
+li {
+    padding: 0.1rem;
+    /* padding: 0 1rem; */
+}
+
+/* .nav li.active {
+    will add a background color routes in nav
+    background-color: #555;
+} */
+
+/* .nav li:hover {
+    /* background-color: rgb(222, 231, 89); */
+    /* background-color: #777; 
+} */
+
+
+.hamburger {
+    display: none;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+@media screen and (max-width: 940px) {
+
+    
+    .mobile-menu {
+        display: block;
+        flex-direction: column;
+        width: 100%;
+        /* top: 100px; */
+        top: -10px;
+        position: absolute;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(7, 7, 95);
+        transition: 0.3;
+        /* color: black; */
+        padding: 0.03rem;
+    }
+
+    .active {
+        top: 80px;
+    }
+
+
+    .mobile-menu div {
+        padding: 1.2rem;
+        margin: 0 1rem;
+        border-bottom: 1px solid #ccc;
+        width: 90%;
+    }
+
+
+    .mobile-nav {
+        margin: 1rem 0;
+    }
+
+    .mobile-menu-bottom {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        
+    } 
+
+    .social-icons {
+        width: 100%;
+        text-align: center;
+        padding: 20rem 0;
+        height: 50px;
+        display: inline-block;
+        margin: 0 10px 0 0;
+        display: flex; 
+        justify-content: space-between;
+        /* width: 80px; */
+    }
+
+    .icon {
+        transform: scale(2.5);
+        text-align: center;
+       
+    }
+
+  
+
+    .social-icons .icon:hover {
+        transform: scale(3);
+        transition: 0.3s;
+    }
+
+    /* .mobile-menu button {
+        margin: 1rem;
+        width: 90%;
+    } */
+
+    .nav-menu {
+        display: none;
+    }
+
+    .nav-icons {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+}
+
+
+/*  makes store shift up. fix later if you want title larger */ 
+/* .site-title { */
+    /* font-size: 2rem; */
+/* } */
+
+.site-title:hover {
+    background-color: rgb(23, 88, 52);
+    /* background-color: #777; */
+}
+
+
+.navbar ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar a {
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+}
+
+.navbar img {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    border-radius: 200px;
+    background: #fffb00;
+    padding: 2px;
+    /* animation: spin 13s infinite linear; */
+}
+
+/* @keyframes spin {
+    0% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+} */
+
+
+ .image {
+    width: 50%;
+    /* height: 50%; */
+    object-fit: cover;
+    padding: 50px;
+    margin: 10px;
+    border-radius: 15px;
+    background: yellow;
+    padding: 3px;
+    width: 300px;
+    /* height: 100px; */
+ }
+  
