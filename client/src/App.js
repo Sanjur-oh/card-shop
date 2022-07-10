@@ -6,7 +6,7 @@ import Profile from "./pages/Profile"
 import Login from "./components/Login"
 import ShoesPage from "./pages/ShoesPage"
 import List from "./pages/List"
-import Main from "./components/Main"
+import Main from "./home/Main"
 
 
 

@@ -11,13 +11,22 @@ class User < ApplicationRecord
 
 
     validates :email, presence: true
-    # should only allow specific email addresses is it validates??
     validate :is_email_valid?
 
 
+    # def is_email_valid
+    #     if ["example@gmail.com", "example@yahoo.com", "example@hotmail.com"].include?(self.email)
+    #         errors.add :base, "Only gmail, yahoo, hotmail allowed!"
+    #     end
+    # end   
+
+   
+    #uncomment and work on syntax for all three
     def is_email_valid?
-        if ["example@gmail.com", "example@yahoo.com", "example@hotmail.com"].include?(self.email)
-            errors.add :base, "Only gmail, yahoo, hotmail allowed!"
+        # unless email.match? ([/gmail.com/, /yahoo.com/, /hotmail.com/])
+        unless email.match? (/gmail.com/)
+            errors.add(:is_email_valid?, "only gmail, please")
+        # errors.add(:is_email_valid?, "only gmail, yahoo, hotmail allowed!")
         end
     end   
 
