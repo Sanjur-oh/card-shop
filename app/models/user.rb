@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
     has_many :user_shoes, dependent: :destroy
     has_many :shoes, through: :user_shoes
+    has_many :reviews
 
     #issue with validating name comes up nil in postman when patching
     validates :name, presence: true

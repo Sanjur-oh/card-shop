@@ -5,8 +5,13 @@ import logo from "../assets/logo.png";
 import {BsPerson} from "react-icons/bs"
 
 
-    function Navbar() {
+    function Navbar({onLogout}) {
       
+      function handleLogout() {
+        fetch("/logout", {
+          method: "DELETE",
+        }).then(() => onLogout());
+      }
 
     
 
@@ -19,6 +24,7 @@ import {BsPerson} from "react-icons/bs"
             </ul>  
             <ul>
               <li className="active"><Link to="/login"> Login </Link></li>  
+              <li className="active"><Link to="/" onClick={handleLogout}>{" "}Logout{" "}</Link></li>
               <li className="nav-icons"><Link to="/profile"><BsPerson className="icon" /></Link></li>
             </ul>              
          </nav>
