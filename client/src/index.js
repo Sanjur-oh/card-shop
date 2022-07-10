@@ -3,21 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { configureStore } from '@reduxjs/toolkit';
 import {BrowserRouter} from 'react-router-dom';
 import  {Provider}  from "react-redux";
-import userReducer from './features/userSlice'
-// import themeReducer from './features/theme'
-import shoeReducer from './features/shoeSlice'
-
-
-const store = configureStore({
-  reducer: {
-    user: userReducer,
-    shoe: shoeReducer,
-    // theme: themeReducer
-  }, 
-})
+import store from './store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

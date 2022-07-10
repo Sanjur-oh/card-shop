@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
-import axios from 'axios'
+
 
 // from first demo
 // const initialStateValue = {username: "", email: "", name: ""}
@@ -7,25 +7,19 @@ import axios from 'axios'
 const initialState = { loading: false, shoes: [], error: '', }
 
 // generates pending, fulfilled and rejected action types
-export const fetchShoes = createAsyncThunk('shoe/fetchShoes', () => {
-    return axios
-        .get("/shoes")
-        .then((response) => response.data)
+export const fetchShoes = createAsyncThunk('user/fetchShoes', () => {
+  return fetch(`/shoes`) 
+  .then((response) => response.json())
+  .then((data) => data)
 })
 
+
 // not positive on this one
-export const fetchShoeId = createAsyncThunk(
-    "shoes/fetchShoeId",
-    async (id) => {
-      fetch(`/shoes/${id}`, {
-        method: "SHOW",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      return id;
-    }
-  );
+export const fetchShoe = createAsyncThunk("Shoes/fetchUser", (id) => {
+  return fetch(`/shoes/${id}`) 
+     .then((response) => response.json())
+     .then((data) => data)
+});
 
 export const createShoes = createAsyncThunk(
     "shoes/createShoes",
@@ -80,6 +74,6 @@ const shoeSlice = createSlice({
     },
 })
 
-// export const {login, logout} = userSlice.actions
+
 
 export default shoeSlice.reducer

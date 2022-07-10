@@ -1,5 +1,5 @@
 import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
-import axios from 'axios'
+// import axios from 'axios'
 
 // from first demo
 // const initialStateValue = {username: "", email: "", name: ""}
@@ -7,25 +7,24 @@ import axios from 'axios'
 const initialState = { loading: false, users: [], error: '', }
 
 // generates pending, fulfilled and rejected action types
+// export const fetchUsers = createAsyncThunk('user/fetchUsers', () => {
+//     return axios
+//         .get("/users")
+//         .then((response) => response.data)
+// })
+
 export const fetchUsers = createAsyncThunk('user/fetchUsers', () => {
-    return axios
-        .get("/users")
-        .then((response) => response.data)
+  return fetch(`/users`) 
+  .then((response) => response.json())
+  .then((data) => data)
 })
 
 // not positive on this one
-export const fetchUserId = createAsyncThunk(
-    "users/fetchUserId",
-    async (id) => {
-      fetch(`/users/${id}`, {
-        method: "SHOW",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      return id;
-    }
-  );
+export const fetchUser = createAsyncThunk("users/fetchUser", (id) => {
+     return fetch(`/users/${id}`) 
+        .then((response) => response.json())
+        .then((data) => data)
+});
 
 export const createUsers = createAsyncThunk(
     "users/createUsers",

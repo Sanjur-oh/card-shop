@@ -21,7 +21,7 @@ User.create(name: "Michael Franco",
   User.create([{
     name: Faker::Name.unique.name,
     username: Faker::Internet.username(specifier: 5..10),
-    email: Faker::Internet.email,
+    email: "#{Faker::Internet.username}@gmail.com",
     password_digest: Faker::Internet.password(min_length: 10, max_length: 20),
     admin: false
 
