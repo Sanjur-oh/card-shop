@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {useDispatch, useSelector} from 'react-redux'
-import {fetchShoes} from '../features/shoeSlice'
+// import {useDispatch, useSelector} from 'react-redux'
+// import {fetchShoes} from '../features/shoeSlice'
 
 function Profile() {
   // const user = useSelector((state) => state.user)
@@ -16,11 +16,11 @@ function Profile() {
     window.location.reload(false);
   }
 
-  const shoe = useSelector((state) => state.shoe);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(fetchShoes());
-  }, []);
+  // const shoe = useSelector((state) => state.shoe);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(fetchShoes());
+  // }, []);
 
   useEffect(() => {
     fetch(`/users/${id}`).then((r) => {
@@ -56,13 +56,14 @@ function Profile() {
     <div>
       <h1>Welcome back, {user.username}</h1>
       <h2>Email: {user.email}</h2>
+    
       <ul>
          {user.shoes.map((shoe) => (
             <div>
+                <h2> Collection: </h2>
                 <div key={shoe.id}>{shoe.shoeName}</div>
                 <img src={shoe.image_url} alt={shoe.name} className="image" />
-            </div>
-                    
+            </div>          
           ))}
       </ul>
       <button onClick={() => handleDeleteActivity(user.id)}>
