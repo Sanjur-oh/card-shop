@@ -7,7 +7,7 @@ import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 const initialState = { loading: false, shoes: [], error: '', }
 
 // generates pending, fulfilled and rejected action types
-export const fetchShoes = createAsyncThunk("user/fetchShoes", () => {
+export const fetchShoes = createAsyncThunk("shoes/fetchShoes", () => {
   return fetch("/shoes") 
   .then((response) => response.json())
   .then((data) => data)

@@ -1,11 +1,11 @@
 import React from 'react';
-// , {useEffect}
-// import {useDispatch, useSelector} from 'react-redux'
+// import {useSelector} from 'react-redux'
 // import {fetchShoes} from '../redux/features/shoeSlice'
 import ShoeCard from './ShoeCard'
 
 function ShoesPage() {
-//   const shoe = useSelector((state) => state.shoe);
+  // const shoes = useSelector((state) => state);
+  // console.log(shoes)
 //   const dispatch = useDispatch();
 //   useEffect(() => {
 //     dispatch(fetchShoes());

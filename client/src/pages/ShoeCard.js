@@ -1,3 +1,34 @@
+// import React, { useEffect} from 'react';
+// import {useDispatch, useSelector} from 'react-redux'
+// import {fetchShoes} from '../redux/features/shoeSlice'
+
+
+// function ShoeCard() {
+//   const shoe = useSelector((state) => state.allShoes.shoe);
+//   const {id, name} = shoe
+//   const dispatch = useDispatch();
+//   useEffect(() => {
+//     dispatch(fetchShoes());
+//   }, []);
+
+//   return (
+//     <div className="four column wide">
+//       <div className="ul link cards">
+//         <div className="card">
+//           <div className="image">
+//             <div className="content">
+
+//             </div>           
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default ShoeCard;
+
+
 import React, { useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
 import {fetchShoes} from '../redux/features/shoeSlice'
