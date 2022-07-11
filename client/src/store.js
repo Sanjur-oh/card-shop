@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import shoeReducer from './features/shoeSlice'
-import userReducer from './features/userSlice'
+// import userReducer from './features/userSlice'
 
 
 const store = configureStore({
     reducer: {
-      user: userReducer,
-      shoe: shoeReducer,
+      shoe: shoeReducer
+      // user: userReducer,
       // theme: themeReducer
-    }, 
+    } 
   })
 
   export default store;

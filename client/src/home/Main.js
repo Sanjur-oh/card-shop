@@ -3,13 +3,15 @@ import React from 'react';
 import Slider from './carousel/Slider.js'
 import "./MainStyle.css"
 
-function Main() {
+function Main({user}) {
     return(
         <div className='main'>
             <Slider />
             <div className='overlay'></div> 
                     <div className='content'>
                         <h1>Welcome</h1>
+                        {/* <h1>Welcome, {user.name}</h1> */}
+
                         <h3>display upcoming shoes</h3>  
                     </div>     
               

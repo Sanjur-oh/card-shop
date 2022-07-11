@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar"
 import ErrorPage from "./pages/ErrorPage"
 import Profile from "./pages/Profile"
 import Login from "./components/Login"
+import CreateUser from "./components/CreateUser"
 import ShoesPage from "./pages/ShoesPage"
 import List from "./pages/List"
 import Main from "./home/Main"
@@ -23,6 +24,7 @@ function App() {
         res.json().then((user) => {
           setIsAuthenticated(true);
           setUser(user);
+          setLoggedIn(true)
         });
       }
     })
@@ -47,24 +49,36 @@ function App() {
  
 
   return (
-      <>
-        <Navbar onLogout={handleLogout} onLogin={handleLogin} loggedIn={loggedIn} user={user} setUser={setUser}/>
-       
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/shoes" element={<ShoesPage />} />
-            <Route path="/list" element={<List />} />
-            <Route path="/login" element={<Login handleLogin={handleLogin} setUser={setUser} setIsAuthenticated={setIsAuthenticated}/>} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="*" element={<ErrorPage />} />   
-          </Routes>
-        </div>
-      {/* <div>
-        <Main /> 
-      </div> */}
-      </> 
-      
+    <>
+      <Navbar
+        onLogout={handleLogout}
+        handleLogin={handleLogin}
+        loggedIn={loggedIn}
+      />
+
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Main user={user} loggedIn={loggedIn} />} />
+          <Route path="/shoes" element={<ShoesPage />} />
+          <Route path="/list" element={<List />} />
+          <Route
+            path="/login"
+            element={
+              <Login
+                error={"Please login!"}
+                handleLogin={handleLogin}
+                setUser={setUser}
+                isAuthenticated={isAuthenticated}
+                setIsAuthenticated={setIsAuthenticated}
+                setLoggedIn={setLoggedIn}
+                loggedIn={loggedIn}/>}
+          />
+          <Route path="/create_user" element={<CreateUser />} />
+          <Route path="/profile" element={<Profile isAuthenticated={isAuthenticated} user={user}/>} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </div>
+    </>
   );
 }
 

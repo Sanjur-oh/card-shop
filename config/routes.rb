@@ -6,25 +6,27 @@ Rails.application.routes.draw do
   resources :user_shoes
   resources :shoes
   resources :users
+  resources :sessions, only: [:create]
 
   # post 'password/forgot', to: 'password#forgot'
   # post 'password/reset', to: 'password#reset'
   
+  # login/out and auth
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
   get "/authorized_user", to: "users#show"
-  get "/me", to: "users#show"
+  get "/users", to: "users#index"
   post "/signup", to: "users#create"
- 
+  get "/me", to: "users#show"
+
+  #Update user information
+  patch 'user/update', to: "users#update"
  
   post "/reset", to: "passwords#reset"
   
-  post "/login", to: "sessions#create"
-  delete "/logout", to: "sessions#destroy"
+  
   get "/cookie_click", to: 'sessions#click'
  
-  get "sign_up", to: "registrations#new"
-
-
-
   # do i need this? is this complicating the home/index route
   get '*path', to: 'fallback#index', constraints: ->(req) { !req.xhr? && req.format.html? }
 end

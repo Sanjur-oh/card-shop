@@ -1,37 +1,57 @@
 class UsersController < ApplicationController
     # skip_before_action :authorize, only: :create
 
-    def create
-        user = User.create!(user_params)
-        session[:user_id] = user.id
-        render json: user, status: :created
-    end
+    # def create
+    #     user = User.create!(user_params)
+    #     session[:user_id] = user.id
+    #     render json: user, status: :created
+    # end
 
     def index
         render json: User.all, status: :ok
     end
 
+    # def show
+    #     user = find_user
+    #     render json: user, status: :ok
+    # end
 
     def show
-        render json: current_user, status: :ok
+        user = User.find_by(id: session[:user_id])
+        if user
+            render json: user
+        else
+            render json: { error: "Not authorized" }, status: :unauthorized
+        end
     end
 
-    def show
-        user = find_user
-        render json: user, status: :ok
+    def create
+        user = User.create!(user_params)
+        if user
+          render json: user
+        else
+          render json: { error: user.errors.messages }, status: 422
+        end
     end
 
-
-    def update 
-        # user.update!(password: params[:password])
-        current_user.update!(user_params)
-        render json: user
+    def update
+        user = User.find(params[:id])
+        if user.update!(user_params)
+          render json: user
+        else
+          render json: { error: user.errors.messages }, status: 422
+        end
     end
-
+   
     def destroy
-        current_user.destroy
-        head :no_content, status: :ok
-    end
+        user = User.find(params[:id])
+        if user.destroy
+          head :no_content
+        else
+          render json: { error: "User not found" }, status: 422
+        end
+      end
+    
 
     private
 
@@ -44,7 +64,22 @@ class UsersController < ApplicationController
     end
 end
 
+    # def show
+        #     user = find_user
+        #     render json: user, status: :ok
+        # end
 
+
+        # def update 
+        #     # user.update!(password: params[:password])
+        #     current_user.update!(user_params)
+        #     render json: user
+        # end
+
+        # def destroy
+        #     current_user.destroy
+        #     head :no_content, status: :ok
+        # end
 
     # def show
     #     if current_user

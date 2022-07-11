@@ -7,36 +7,36 @@ import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 const initialState = { loading: false, shoes: [], error: '', }
 
 // generates pending, fulfilled and rejected action types
-export const fetchShoes = createAsyncThunk('user/fetchShoes', () => {
-  return fetch(`/shoes`) 
+export const fetchShoes = createAsyncThunk("user/fetchShoes", () => {
+  return fetch("/shoes") 
   .then((response) => response.json())
   .then((data) => data)
 })
 
 
 // not positive on this one
-export const fetchShoe = createAsyncThunk("Shoes/fetchUser", (id) => {
+export const fetchShoe = createAsyncThunk("shoes/fetchShoe", (id) => {
   return fetch(`/shoes/${id}`) 
      .then((response) => response.json())
      .then((data) => data)
 });
 
-export const createShoes = createAsyncThunk(
-    "shoes/createShoes",
-    async (newShoes) => {
+export const createShoe = createAsyncThunk(
+    "shoes/createShoe",
+    async (newShoe) => {
       return fetch(`/shoes`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(newShoes),
+        body: JSON.stringify(newShoe),
       }).then((res) => res.json());
     }
   );
 
   // could be shoeId
-  export const deleteShoes = createAsyncThunk(
-    "shoes/deleteShoes",
+  export const deleteShoe = createAsyncThunk(
+    "shoes/deleteShoe",
     async (id) => {
       fetch(`/shoes/${id}`, {
         method: "DELETE",
@@ -63,12 +63,12 @@ const shoeSlice = createSlice({
             state.shoes = []
             state.error = action.error.message
         })
-        // builder.addCase(createShoes.fulfilled, (state, action) => {
-        //     state.shoes = [...state.shoes, action.payload];
-        // })
-        // builder.addCase(deleteshoes.fulfilled, (state, action) => {
-        //     state.shoes = [...state.shoes, action.payload];
-        // })
+        builder.addCase(createShoe.fulfilled, (state, action) => {
+            state.shoes = [...state.shoes, action.payload];
+        })
+        builder.addCase(deleteShoe.fulfilled, (state, action) => {
+            state.shoes = [...state.shoes, action.payload];
+        })
           
 
     },

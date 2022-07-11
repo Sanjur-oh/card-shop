@@ -1,18 +1,18 @@
-// maybe turn this into a dark mode feature
-import {createSlice} from "@reduxjs/toolkit";
+// // maybe turn this into a dark mode feature
+// import {createSlice} from "@reduxjs/toolkit";
 
-const initialStateValue = ""
+// const initialStateValue = ""
 
-export const themeSlice = createSlice({
-    name: 'theme',
-    initialState: {value: initialStateValue },
-    reducers: {
-        changeColor: ( state, action ) => {
-            state.value = action.payload
-        }, 
-    },
-})
+// export const themeSlice = createSlice({
+//     name: 'theme',
+//     initialState: {value: initialStateValue },
+//     reducers: {
+//         changeColor: ( state, action ) => {
+//             state.value = action.payload
+//         }, 
+//     },
+// })
 
-export const {changeColor} = themeSlice.actions
+// export const {changeColor} = themeSlice.actions
 
-export default themeSlice.reducer
+// export default themeSlice.reducer
