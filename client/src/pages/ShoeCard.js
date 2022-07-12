@@ -23,12 +23,12 @@ import {GiGoat, GiConverseShoe} from "react-icons/gi"
 
     return (
       <>
-        {shoe.shoes.map((shoe) => (
-          <div className="shoe_container">
-              <div className="ul link cards">
-                <div className="card">
-                  <div><img src={shoe.image_url} alt={shoe.name} className="image" /></div>
-                  <div className="content">
+        {shoe.shoes.map((shoe, i) => (
+          <div className="shoe_container" key={i}>
+              <div className="ul link cards" >
+                <div className="card" >
+                  <div ><img src={shoe.image_url} alt={shoe.name} className="image" /></div>
+                  <div className="content" >
                     <div className="header">{shoe.shoeName}</div>
                     <div className="price">Retail ${shoe.retailPrice}</div>
                     <div className="detail">{shoe.colorway}</div>
