@@ -74,10 +74,16 @@ button {
     display: auto; 
     justify-content: space-between;
     /* width: 80px; */
-    transform: scale(1.5);
+    transform: scale(5.5);
 }
 
 .card-icons .card_icon:hover {
     transform: scale(3);
     transition: 0.3s;
+}
+
+.icon_button {
+    /* visibility: hidden; */
+    padding: 0;
+    transform: scale(.5);
 }

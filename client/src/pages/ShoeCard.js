@@ -18,6 +18,9 @@ import {GiGoat, GiConverseShoe} from "react-icons/gi"
       dispatch(fetchShoes());
     }, []);
 
+    
+
+
     return (
       <>
         {shoe.shoes.map((shoe) => (
@@ -35,9 +38,13 @@ import {GiGoat, GiConverseShoe} from "react-icons/gi"
                       
                       
                       <div className="card-icons">
-                        <GiGoat className="card_icon">{shoe.goat}</GiGoat>
-                        <GiConverseShoe className="card_icon">{shoe.stockX}</GiConverseShoe>
-                        <FaEbay className="card_icon">{shoe.ebay}</FaEbay>
+                        <a href={shoe.goat}><button className="icon_button"><GiGoat className="card_icon"/></button></a>
+                        <a href={shoe.stockX}><button className="icon_button"><GiConverseShoe className="card_icon"/></button></a>
+                        <a href={shoe.ebay}><button className="icon_button"> <FaEbay className="card_icon"/></button></a>
+
+                        {/* <GiGoat className="card_icon">{shoe.goat}</GiGoat> */}
+                        {/* <GiConverseShoe className="card_icon">{shoe.stockX}</GiConverseShoe>
+                        <FaEbay className="card_icon">{shoe.ebay}</FaEbay> */}
                       </div>
 
                   </div>
