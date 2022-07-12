@@ -26,14 +26,3 @@ function ShoesPage() {
 
 export default ShoesPage
 
-
-//   {/* {shoe.loading && <div>Loading...</div>}
-//       {!shoe.loading && shoe.error ? <div>Error: {shoe.error}</div> : null}
-//       <ul>
-//         {shoe.shoes.map((shoe) => (
-//           <div>
-//             <div key={shoe.id}>{shoe.shoeName}</div>
-//             <img src={shoe.image_url} alt={shoe.name} className="image" />
-//           </div>
-//         ))}
-//       </ul> */}

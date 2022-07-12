@@ -11,7 +11,8 @@
     margin: 0;
     padding: 0;
     /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
-    /* background-color: rgb(7, 7, 95); */
+    /* z-index: -1;
+    background-color: slategray; */
 }
 
 body {
@@ -35,11 +36,15 @@ h2 {
     font-size: 2rem;
 }
 
+
+
 .container {
     /* max-width: 1240px; */
     margin: auto;
     text-align: center;
     padding: 0 1rem
+    
+    
 }
 
 button {

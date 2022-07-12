@@ -8,10 +8,19 @@
 
 .shoe_container {
     display: flex;
-    padding: 1rem;
+    padding: 0.75rem;
     /* max-width: 1240px; */
-    transform: scale(0.9);
+    transform: scale(0.82);
+    /* background-color: rgb(212, 212, 71); */
+
+    background: linear-gradient(90deg, rgba(204,227,21,1) 0%, rgba(140,127,181,0) 64%, rgba(51,9,250,1) 96%, rgba(0,212,255,1) 100%);
+    /* background-color: rgb(7, 7, 95); */
+    border-radius: 25px;
 }
+
+ .shoe_container:hover{
+    filter: contrast(70%);
+  }
 
 button {
     background-image: linear-gradient(45deg,var(--primary-dark) 0%, var(--primary-light) 100%);
@@ -46,9 +55,11 @@ button {
     background: rgb(7, 7, 95);
 }
 
-.image:hover{
+/* .image:hover{
     filter: contrast(70%);
   }
+   */
+ 
 
 .header {
     color:  black(7, 7, 95);

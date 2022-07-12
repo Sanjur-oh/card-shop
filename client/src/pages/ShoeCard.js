@@ -1,6 +1,6 @@
 import React, { useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux'
-import {fetchShoes} from '../redux/features/shoeSlice'
+import {fetchShoes} from '../redux/features/shoesSlice'
 import {Link} from 'react-router-dom'
 import {FaEbay} from "react-icons/fa"
 import {GiGoat, GiConverseShoe} from "react-icons/gi"
@@ -34,7 +34,7 @@ import {GiGoat, GiConverseShoe} from "react-icons/gi"
                     <div className="detail">{shoe.colorway}</div>
                     <div className="buttonDiv"><Link to><button >Like</button></Link></div>
                     {/* <button >Like</button> */}
-                    <div className="buttonDiv"><Link  to={`/shoes/${shoe.id}`}><button >View!</button></Link></div>
+                    {/* <div className="buttonDiv"><Link  to={`/shoes/${shoe.id}`}><button >View!</button></Link></div> */}
                       
                       
                       <div className="card-icons">

@@ -1,4 +1,4 @@
-import { Routes, Route, Switch } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import Navbar from "./components/Navbar"
@@ -7,7 +7,8 @@ import Profile from "./pages/Profile"
 import Login from "./components/Login"
 import CreateUser from "./components/CreateUser"
 import ShoesPage from "./pages/ShoesPage"
-import ShoeDetails from "./pages/ShoeDetails"
+import UserShoeForm from "./pages/UserShoeForm"
+// import ShoeDetails from "./pages/ShoeDetails"
 import List from "./pages/List"
 import Main from "./home/Main"
 
@@ -61,7 +62,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main user={user} loggedIn={loggedIn} />} />
           <Route path="/shoes" element={<ShoesPage />} />
-          <Route path="/shoes/:id" element={<ShoeDetails />} />
+          {/* <Route path="/shoes/:id" element={<ShoeDetails />} /> */}
           <Route path="/list" element={<List />} />
           <Route
             path="/login"
@@ -75,6 +76,7 @@ function App() {
                 setLoggedIn={setLoggedIn}
                 loggedIn={loggedIn}/>}
           />
+          <Route path="/user_shoes/new" element={<UserShoeForm />} />
           <Route path="/create_user" element={<CreateUser />} />
           <Route path="/profile" element={<Profile isAuthenticated={isAuthenticated} user={user}/>} />
           <Route path="*" element={<ErrorPage />} />

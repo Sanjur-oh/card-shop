@@ -15,7 +15,7 @@ export const fetchShoes = createAsyncThunk("shoes/fetchShoes", () => {
 
 
 // not positive on this one
-export const fetchShoe = createAsyncThunk("shoes/fetchShoe", (id) => {
+export const fetchShoe = createAsyncThunk("shoe/fetchShoe", (id) => {
   return fetch(`/shoes/${id}`) 
      .then((response) => response.json())
      .then((data) => data)
@@ -48,7 +48,7 @@ export const createShoe = createAsyncThunk(
     }
   );
 
-const shoeSlice = createSlice({
+const shoesSlice = createSlice({
     name: 'shoes',
     initialState,
     extraReducers: (builder) => {
@@ -63,6 +63,17 @@ const shoeSlice = createSlice({
             state.shoes = []
             state.error = action.error.message
         })
+        builder.addCase(fetchShoe.pending, (state) => {})
+        builder.addCase(fetchShoe.fulfilled, (state, action) => {
+          state.loading = false
+          state.shoes = action.payload
+          state.error = ''
+      })
+      builder.addCase(fetchShoe.rejected, (state, action) => {
+        state.loading = false
+        state.shoes = []
+        state.error = action.error.message
+    })
         builder.addCase(createShoe.fulfilled, (state, action) => {
             state.shoes = [...state.shoes, action.payload];
         })
@@ -76,4 +87,4 @@ const shoeSlice = createSlice({
 
 
 
-export default shoeSlice.reducer
+export default shoesSlice.reducer

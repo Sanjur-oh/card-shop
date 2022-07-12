@@ -10,7 +10,7 @@
   
 
 import { configureStore } from '@reduxjs/toolkit';
-import shoeReducer from './features/shoeSlice'
+import shoeReducer from './features/shoesSlice'
 // import userReducer from './features/userSlice'
 
 const store = configureStore({

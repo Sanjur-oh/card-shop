@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import  { Link, useParams } from "react-router-dom";
 // import {useDispatch, useSelector} from 'react-redux'
 // import {fetchShoes} from '../features/shoeSlice'
 
@@ -66,9 +66,8 @@ function Profile() {
             </div>          
           ))}
       </ul>
-      <button onClick={() => handleDeleteActivity(user.id)}>
-        Delete Account?
-      </button>
+      <button onClick={() => handleDeleteActivity(user.id)}>Delete Account?</button>
+      <button><Link to="/user_shoes/new">Add Shoe To Collection</Link></button>
       {/* <button onClick={() => handleDeleteActivity(user.password)}>Update Password</button> */}
       {/* <Link onClick={() => handleDeleteActivity(user.id)}>Delete Account?</Link> */}
     </div>
