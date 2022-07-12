@@ -61,7 +61,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main user={user} loggedIn={loggedIn} />} />
           <Route path="/shoes" element={<ShoesPage />} />
-          <Route path="/shoe/:shoeId" element={<ShoeDetails />} />
+          <Route path="/shoes/:id" element={<ShoeDetails />} />
           <Route path="/list" element={<List />} />
           <Route
             path="/login"

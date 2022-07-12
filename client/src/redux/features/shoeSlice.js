@@ -49,7 +49,7 @@ export const createShoe = createAsyncThunk(
   );
 
 const shoeSlice = createSlice({
-    name: 'shoe',
+    name: 'shoes',
     initialState,
     extraReducers: (builder) => {
         builder.addCase(fetchShoes.pending, (state) => {})

@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,400&display=swap');
 
 :root {
-    --primary-dark: #5651e5;
-    --primary-light: #709dff;
+    --primary-light: rgb(7, 7, 95);
+    /* --primary-light: #709dff; */
+    --primary-dark: rgb(212, 212, 71);
 }
 
 * {
@@ -44,11 +45,12 @@ h2 {
 button {
     background-image: linear-gradient(45deg,var(--primary-dark) 0%, var(--primary-light) 100%);
     border: 1px solid var(--primary-dark);
-    color: white;
+    color: gold;
     padding: .7rem 1.5rem;
     border-radius: 8px;
     cursor: pointer;
     font-family: 'Poppins', sans-serif;
+    
 
 }
 
