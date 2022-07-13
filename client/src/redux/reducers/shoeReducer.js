@@ -1,23 +1,17 @@
-//not in use
+const initialState = {
+    shoes:[{
+        loading: false, 
+        shoes: [], 
+        error: '',
+    }]
+}
 
-// import {ActionTypes} from '../constants/action-types';
-
-// const initialState = {
-//     shoes:[{
-//         loading: false, 
-//         shoes: [], 
-//         error: '',
-//     }]
-// }
-
-// export const shoeReducer = (state = initialState, {type, payload}) => {
-//    switch(type) {
-//     case ActionTypes.SET_SHOES:
-//         return state;
+export const shoeReducer = (state = initialState, {type, payload}) => {
+ return state;
 
     
+}
+    
+ 
+    export default shoeReducer
 
-//     default:
-//         return state;
-//    }
-// }

@@ -88,7 +88,8 @@ function App() {
 
       <div className="container">
         <Routes>
-          <Route path="/" element={<Main user={user} loggedIn={loggedIn} />} />
+          {/* <Route path="/" element={<Main user={user} loggedIn={loggedIn} allShoes={sortedShoes} updateRatings={updateRatings}/>} /> */}
+          <Route path="/" element={<Main user={user} loggedIn={loggedIn}/>} />
           <Route path="/shoes" element={<ShoesPage />} />
           {/* <Route path="/shoes/:id" element={<ShoeDetails />} /> */}
           {/* <Route path="/list" element={<List allShoes={sortedShoes} updateRatings={updateRatings}/>} /> */}
