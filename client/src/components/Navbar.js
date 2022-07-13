@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import { Link } from "react-router-dom";
 import "./NavbarStyle.css"
 import logo from "../assets/logo.png";
@@ -20,7 +20,7 @@ import {BsPerson} from "react-icons/bs"
            <ul>
               <div><Link to="/"><img src={logo} alt="Sweet Feet" /></Link></div>
               <li className="active"><Link to="/shoes"> Kicks </Link></li>
-              <li className="active"><Link to="/list"> The List </Link></li>
+              {/* <li className="active"><Link to="/list"> The List </Link></li> */}
             </ul>  
             <ul>
               <li className="active"><Link to="/login"> Login </Link></li>  
