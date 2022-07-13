@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 import Navbar from "./components/Navbar"
 import ErrorPage from "./pages/ErrorPage"
@@ -18,6 +18,34 @@ function App() {
   const [user, setUser] = useState(null);
   const [loggedIn, setLoggedIn] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [allShoes, setAllShoes] = useState([]);
+
+  function updateRatings(shoeId){
+
+    const updatedShoes = allShoes.map(shoe => {
+      if(shoe.id === shoeId){
+        return {...shoe, ratings: shoe.ratings + 1}
+      }else{
+        return shoe
+      }
+    })
+    setAllShoes(updatedShoes)
+  }
+
+  // function addShoeToState(shoe){
+  //   setAllShoes([...allShoes, shoe])
+  // }
+
+  useEffect(() => {
+  fetch("/shoes")
+  .then(res => res.json())
+  .then(shoesArray => setAllShoes(shoesArray))
+  }
+  ,[]);
+
+  const sortedShoes = allShoes.sort((a, b) => b.ratings - a.ratings);
+
+  console.log(sortedShoes)
 
    //Keeps user logged in
    useEffect(() => {
@@ -63,7 +91,7 @@ function App() {
           <Route path="/" element={<Main user={user} loggedIn={loggedIn} />} />
           <Route path="/shoes" element={<ShoesPage />} />
           {/* <Route path="/shoes/:id" element={<ShoeDetails />} /> */}
-          <Route path="/list" element={<List />} />
+          <Route path="/list" element={<List allShoes={sortedShoes} updateRatings={updateRatings}/>} />
           <Route
             path="/login"
             element={

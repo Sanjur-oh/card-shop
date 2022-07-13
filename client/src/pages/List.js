@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect} from 'react';
+import ListCard from './ListCard'
+import {useDispatch, useSelector} from 'react-redux'
+import {fetchShoes} from '../redux/features/shoesSlice'
 // import { BrowserRouter as Router } from "react-router-dom";
 
-function List() {
+function List({allShoes, updateRatings}) {
+    const shoe = useSelector((state) => state.shoe);
+    const dispatch = useDispatch();
+    useEffect(() => {
+      dispatch(fetchShoes());
+    }, []);
+
+    
+
+    const topFive = allShoes.slice(0, 4);
+    // console.log(topFive)
+
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1>List</h1>
-            </header>
-        </div>
+        <>
+        <h1 className="">List</h1>
+            <ul className="cards" >
+                {topFive.map(shoe => <ListCard key={shoe.id} shoe={shoe} updateRatings={updateRatings}/>)}
+            </ul>
+        </>
 
 
     )
