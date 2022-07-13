@@ -7,7 +7,8 @@ import Profile from "./pages/Profile"
 import Login from "./pages/Login"
 import CreateUser from "./components/CreateUser"
 import ShoesPage from "./pages/ShoesPage"
-import UserShoeForm from "./pages/UserShoeForm"
+// import UserShoeForm from "./pages/UserShoeForm"
+import NewShoeForm from "./pages/NewShoeForm"
 // import ShoeDetails from "./pages/ShoeDetails"
 // import List from "./pages/List"
 import Main from "./home/Main"
@@ -105,7 +106,8 @@ function App() {
                 setLoggedIn={setLoggedIn}
                 loggedIn={loggedIn}/>}
           />
-          <Route path="/user_shoes/new" element={<UserShoeForm />} />
+          {/* <Route path="/user_shoes/new" element={<UserShoeForm />} /> */}
+          <Route path="/new_shoe" element={<NewShoeForm />} />
           <Route path="/create_user" element={<CreateUser />} />
           <Route path="/password/reset"  />
           <Route path="/profile" element={<Profile isAuthenticated={isAuthenticated} user={user}/>} />

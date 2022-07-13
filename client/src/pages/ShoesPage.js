@@ -1,4 +1,5 @@
 import React from 'react';
+import  { Link } from "react-router-dom";
 // import {useSelector, useDispatch} from 'react-redux'
 // import {fetchShoes} from '../redux/features/shoeSlice'
 import ShoeCard from './ShoeCard'
@@ -18,6 +19,7 @@ function ShoesPage() {
       <div id="container">
             <ul className='cards'>
                 {(<ShoeCard />)}
+                <button><Link to="/new_shoe">Add Shoe</Link></button>
             </ul>
         </div>
     </>
