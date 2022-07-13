@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   # post "password/reset", to: "password_resets#create"
   post "/reset", to: "passwords#reset"
   # post 'password/forgot', to: 'password#forgot'
-  # post 'password/reset', to: 'password#reset'   
+  post 'password/reset', to: 'password#reset'   
 
 
 

@@ -84,18 +84,18 @@ function CreateUser() {
   };
 
   // Showing success message
-  // const successMessage = () => {
-  //   return (
-  //     <div
-  //       className="success"
-  //       style={{
-  //         display: submitted ? "" : "none",
-  //       }}
-  //     >
-  //       <h1>User {newUsername} successfully registered!!</h1>
-  //     </div>
-  //   );
-  // };
+  const successMessage = () => {
+    return (
+      <div
+        className="success"
+        style={{
+          display: submitted ? "" : "none",
+        }}
+      >
+        <h1>User {newUsername} successfully registered!!</h1>
+      </div>
+    );
+  };
 
   // Showing error message if error is true
   const errorMessage = () => {
@@ -116,7 +116,7 @@ function CreateUser() {
       <form className="form-container" onSubmit={handleNewUser}>
         <div style={{ fontSize: 10, color: "red" }}>
           {errorMessage()}
-          {/* {successMessage()} */}
+          {successMessage()}
         </div>
         <div>
           <h1 className="form-name">Create New Account</h1>

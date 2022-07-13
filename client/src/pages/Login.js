@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 // import {fetchUsers} from '../features/userSlice'
 // import {fetchUser} from '../features/userSlice'
 // useEffect,
-
+// , loggedIn
 function Login({ user, setUser, setIsAuthenticated, setLoggedIn}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -108,7 +108,7 @@ function Login({ user, setUser, setIsAuthenticated, setLoggedIn}) {
             disabled={!username || !password}
           />
           {/* <Link to="/password/reset">Forgot your password?</Link> */}
-          <a href="/password/reset"><button className="button">Forgot your password?</button></a>
+            <button className="button">Forgot your password?</button>
           {error ? <div>{error}</div> : null}
         </form>
       }

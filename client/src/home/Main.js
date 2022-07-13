@@ -1,22 +1,22 @@
 import React, { useEffect, useState} from 'react';
 // import video from "../assets/video.mp4"
-import {useDispatch, useSelector} from 'react-redux'
+// import {useDispatch, useSelector} from 'react-redux'
 import Slider from './carousel/Slider.js'
 import "./MainStyle.css"
-import ShoeCard from '../pages/ShoeCard'
+// import ShoeCard from '../pages/ShoeCard'
 import {fetchShoes} from '../redux/features/shoesSlice'
 
 // , allShoes, updateRatings
 function Main({ user }) {
-    const shoe = useSelector((state) => state.shoe);
+    // const shoe = useSelector((state) => state.shoe);
     // const shoes = useSelector((state) => state.allShoes.shoes);
     // const [allShoes, setAllShoes] = useState([]);
     
     
-    const dispatch = useDispatch();
-    useEffect(() => {
-    dispatch(fetchShoes());
-    }, []);
+    // const dispatch = useDispatch();
+    // useEffect(() => {
+    // dispatch(fetchShoes());
+    // }, []);
 
     // function updateRatings(shoeId){
 
