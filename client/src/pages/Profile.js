@@ -56,18 +56,20 @@ function Profile() {
     <div>
       <h1>Welcome back, {user.username}</h1>
       <h2>Email: {user.email}</h2>
-    
+      <h2> Collection: </h2>
       <ul>
          {user.shoes.map((shoe, i) => (
             <div key={i}>
-                <h2> Collection: </h2>
+                
                 <div >{shoe.shoeName}</div>
                 <img src={shoe.image_url} alt={shoe.name} className="image" />
+                
             </div>          
           ))}
       </ul>
+      
       <button onClick={() => handleDeleteActivity(user.id)}>Delete Account?</button>
-      <button><Link to="/user_shoes/new">Add Shoe To Collection</Link></button>
+      <button><Link to="/user_shoes/new">Add Shoe</Link></button>
       {/* <button onClick={() => handleDeleteActivity(user.password)}>Update Password</button> */}
       {/* <Link onClick={() => handleDeleteActivity(user.id)}>Delete Account?</Link> */}
     </div>

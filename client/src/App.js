@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar"
 import ErrorPage from "./pages/ErrorPage"
 import Profile from "./pages/Profile"
-import Login from "./components/Login"
+import Login from "./pages/Login"
 import CreateUser from "./components/CreateUser"
 import ShoesPage from "./pages/ShoesPage"
 import UserShoeForm from "./pages/UserShoeForm"
@@ -78,6 +78,7 @@ function App() {
           />
           <Route path="/user_shoes/new" element={<UserShoeForm />} />
           <Route path="/create_user" element={<CreateUser />} />
+          <Route path="/password/reset"  />
           <Route path="/profile" element={<Profile isAuthenticated={isAuthenticated} user={user}/>} />
           <Route path="*" element={<ErrorPage />} />
         </Routes>

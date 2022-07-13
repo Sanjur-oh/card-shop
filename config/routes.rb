@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:create]
 
-  # post 'password/forgot', to: 'password#forgot'
-  # post 'password/reset', to: 'password#reset'
+
   
   # login/out and auth
   post "/login", to: "sessions#create"
@@ -21,9 +20,18 @@ Rails.application.routes.draw do
 
   #Update user information
   patch 'user/update', to: "users#update"
- 
+
+  #password reset
+
+  # get "password/reset", to: "password_resets#new"
+  # post "password/reset", to: "password_resets#create"
   post "/reset", to: "passwords#reset"
-  
+  # post 'password/forgot', to: 'password#forgot'
+  # post 'password/reset', to: 'password#reset'   
+
+
+
+  # patch 'shoes/update', to: "shoes#update"
   
   get "/cookie_click", to: 'sessions#click'
  
@@ -32,11 +40,3 @@ Rails.application.routes.draw do
 end
 
 
-
-  # route to test your configuration. but not sure if needed
-  # get '/hello', to: 'application#hello_world'
-
-  # needs work to get devise auth running
-  # get 'home/index'
-  #, to: 'home#index'
-  # root 'home#index'

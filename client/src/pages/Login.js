@@ -101,6 +101,14 @@ function Login({ user, setUser, setIsAuthenticated, setLoggedIn}) {
           >{" "}Don't have an account?{" "}
           </label>
           <Link to="/create_user"><button className="form-button">Sign Up</button></Link>
+          <br></br>
+          <br></br>
+          <label
+            style={{ fontSize: "20px", padding: "0px" }}
+            disabled={!username || !password}
+          />
+          {/* <Link to="/password/reset">Forgot your password?</Link> */}
+          <a href="/password/reset"><button className="button">Forgot your password?</button></a>
           {error ? <div>{error}</div> : null}
         </form>
       }

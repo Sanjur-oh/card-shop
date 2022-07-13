@@ -17,7 +17,7 @@ class ShoesController < ApplicationController
     def update
         shoe = find_shoe
         shoe.update!(shoe_params)
-        render json: shoe, status: :updated 
+        render json: shoe, status: :ok
     end
 
     def destroy

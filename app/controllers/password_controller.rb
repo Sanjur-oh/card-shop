@@ -1,7 +1,7 @@
 # this needs testing and work done
-class PasswordsController < ApplicationController
+class PasswordController < ApplicationController
 
-    skip_before_action :authorize, only: :reset
+    # skip_before_action :authorize, only: :reset
     
     def reset
         user = User.find_by(email: params[:email])
