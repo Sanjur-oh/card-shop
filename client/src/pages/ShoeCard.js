@@ -38,7 +38,7 @@ import {GiGoat, GiConverseShoe} from "react-icons/gi"
                       
                       
                       <div className="card-icons">
-                        <a href={shoe.goat}><button className="icon_button"><GiGoat className="card_icon"/></button></a>
+                        <a href={shoe.goat} ><button className="icon_button"><GiGoat className="card_icon"/></button></a>
                         <a href={shoe.stockX}><button className="icon_button"><GiConverseShoe className="card_icon"/></button></a>
                         <a href={shoe.ebay}><button className="icon_button"> <FaEbay className="card_icon"/></button></a>
 

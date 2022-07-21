@@ -1,8 +1,8 @@
 import React from 'react';
-import  { Link } from "react-router-dom";
 // import {useSelector, useDispatch} from 'react-redux'
 // import {fetchShoes} from '../redux/features/shoeSlice'
 import ShoeCard from './ShoeCard'
+import {GiSonicShoes} from "react-icons/gi"
 import './ShoesPage.css'
 
 function ShoesPage() {
@@ -15,12 +15,17 @@ function ShoesPage() {
 
   return (
     <>
+    <div id="container">
         <h1>Browse Shoes</h1>
+        <h2>Add New Shoe </h2>
+              {/* <button className="add_shoe"><Link to="/new_shoe"/></button> */}
+              {/* <button className="icon_button"><GiSonicShoes className="card_icon"/><Link to="/new_shoe"/></button> */}
+              <a href={"/new_shoe"}><button className="add_new_button"> <GiSonicShoes className="card_icon"/></button></a>
+      </div>
       <div id="container">
             <ul className='cards'>
-                {(<ShoeCard />)}
-                <button><Link to="/new_shoe">Add Shoe</Link></button>
-            </ul>
+                {(<ShoeCard />)}              
+            </ul>     
         </div>
     </>
   );

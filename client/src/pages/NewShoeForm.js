@@ -1,7 +1,14 @@
-import React, {  useState } from 'react';
 // useEffect,
+import React, {  useState } from 'react';
+import { Link } from "react-router-dom";
+
+
+
+
+
+
 function NewShoeForm() {
-  const [shoes, setShoes] = useState([]);
+//   const [shoes, setShoes] = useState([]);
   const [shoeId, setShoeId] = useState("");
   const [shoeName, setShoeName] = useState("");
   const [brand, setBrand] = useState("");
@@ -55,10 +62,18 @@ function NewShoeForm() {
         <input value={colorway} onChange={(e) => setColorway(e.target.value)} name="colorway" type="text" placeholder='Colorway'/>
         <input value={retailPrice} onChange={(e) => setRetailPrice(e.target.value)} name="price" type="text" placeholder='Price'/>
         <input value={image_url} onChange={(e) => setImage_url(e.target.value)} name="image" type="text" placeholder='Image URL'/>
-        <input value={stockX} onChange={(e) => setStockX(e.target.value)} name="stockX" type="text" placeholder='stockX Link'/>
+        <input value={stockX} onChange={(e) => setStockX(e.target.value)} name="stockX" type="text" placeholder='StockX Link'/>
         <input value={ebay} onChange={(e) => setEbay(e.target.value)} name="ebay" type="text" placeholder='Ebay Link'/>
         <input value={goat} onChange={(e) => setGoat(e.target.value)} name="goat" type="text" placeholder='Goat Link'/>
         <button type="submit">Submit</button>
+        {/* <button className="active"><Link to="/shoes" onClick={handleSubmit}>{" "}Submit{" "}</Link></button> */}
+        {formErrors.length > 0
+          ? formErrors.map((err) => (
+              <p key={err} style={{ color: "red" }}>
+                {err}
+              </p>
+            ))
+          : null}
     </form>
   );
 }
